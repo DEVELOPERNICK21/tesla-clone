@@ -8,30 +8,30 @@ function Header() {
 
     return (
         <Container>
-            <a href="#" >
+            <a href="/" >
                 <img src="./images/logo.svg" alt="Tesla LOGO SVG" />
             </a>
             <Menu>
-                <a href="#">Model S</a>
-                <a href="#">Model Y</a>
-                <a href="#">Model 3</a>
-                <a href="#">Model X</a>
+                <a href="/">Model S</a>
+                <a href="/">Model Y</a>
+                <a href="/">Model 3</a>
+                <a href="/">Model X</a>
             </Menu>
             <RightMenu>
-                <a href="#">Shop</a>
-                <a href="#">Tesla Account</a>
+                <a href="/">Shop</a>
+                <a href="/">Tesla Account</a>
                 <CustomIcon onClick={() =>setBurgerStatus(true)} />
             </RightMenu>
             <BurgerNav show={burgerStatus}>
                 <CloseWrapper>
                     <CustomClose onClick={() => setBurgerStatus(false)} />
                 </CloseWrapper>
-                <li><a href="#">Cyber Truck</a></li>
-                <li><a href="#">Model S</a></li>
-                <li><a href="#">Model Y</a></li>
-                <li><a href="#">Model 3</a></li>
-                <li><a href="#">Model X</a></li>
-                <li><a href="#">Cyber Truck</a></li>
+                <li><a href="/">Cyber Truck</a></li>
+                <li><a href="/">Model S</a></li>
+                <li><a href="/">Model Y</a></li>
+                <li><a href="/">Model 3</a></li>
+                <li><a href="/">Model X</a></li>
+                <li><a href="/">Cyber Truck</a></li>
             </BurgerNav>
         </Container>
     )
