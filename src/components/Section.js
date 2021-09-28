@@ -82,11 +82,18 @@ cursor: pointer;
 margin: 8px;
 font-weight: 600;
 
-`
+:hover {
+    background-color: #000;
+  }
+  
+  `
 const RightButton = styled(LeftButton)`
     background-color: white;
     opacity: 0.65;
     color: black;
+    :hover {
+        background-color: #e5e5e5;
+      }
 `
 
 const DownArrow = styled.img`
