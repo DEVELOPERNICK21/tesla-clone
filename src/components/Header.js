@@ -2,9 +2,12 @@ import React,{useState} from 'react'
 import styled from 'styled-components';
 import MenuIcon from '@material-ui/icons/Menu';
 import CloseIcon from '@material-ui/icons/Close';
+import {selectCars} from '../features/car/carSlice'
+import { useSelector } from 'react-redux';
 
 function Header() {
     const[burgerStatus, setBurgerStatus] = useState(false);
+    const cars = useSelector(selectCars);
 
     return (
         <Container>
@@ -12,10 +15,9 @@ function Header() {
                 <img src="./images/logo.svg" alt="Tesla LOGO SVG" />
             </a>
             <Menu>
-                <a href="/">Model S</a>
-                <a href="/">Model Y</a>
-                <a href="/">Model 3</a>
-                <a href="/">Model X</a>
+             { cars && cars.map((car, index) =>(
+                <a key={index} href="/">{car}</a>
+             ) )}
             </Menu>
             <RightMenu>
                 <a href="/">Shop</a>
@@ -26,11 +28,9 @@ function Header() {
                 <CloseWrapper>
                     <CustomClose onClick={() => setBurgerStatus(false)} />
                 </CloseWrapper>
-                <li><a href="/">Cyber Truck</a></li>
-                <li><a href="/">Model S</a></li>
-                <li><a href="/">Model Y</a></li>
-                <li><a href="/">Model 3</a></li>
-                <li><a href="/">Model X</a></li>
+                {cars && cars.map((car,index)=> (
+                <li key={index}><a href="/">{car}</a></li>
+                ))}
                 <li><a href="/">Cyber Truck</a></li>
             </BurgerNav>
         </Container>
